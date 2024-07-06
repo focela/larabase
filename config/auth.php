@@ -1,7 +1,11 @@
 <?php
+/*
+ * Copyright (c) 2024 Focela Technologies. All rights reserved.
+ * Use of this source code is governed by a MIT style
+ * license that can be found in the LICENSE file.
+ */
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -14,7 +18,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard'     => 'api',
         'passwords' => 'users',
     ],
 
@@ -37,7 +41,11 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver'   => 'sentinel',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver'   => 'passport',
             'provider' => 'users',
         ],
     ],
@@ -62,7 +70,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model'  => Modules\User\Entities\User::class,
         ],
 
         // 'users' => [
@@ -93,8 +101,8 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_reset_tokens',
-            'expire' => 60,
+            'table'    => 'password_reset_tokens',
+            'expire'   => 60,
             'throttle' => 60,
         ],
     ],
@@ -111,5 +119,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
 ];

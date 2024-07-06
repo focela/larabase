@@ -1,7 +1,11 @@
 <?php
+/*
+ * Copyright (c) 2024 Focela Technologies. All rights reserved.
+ * Use of this source code is governed by a MIT style
+ * license that can be found in the LICENSE file.
+ */
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Hash Driver
@@ -45,10 +49,9 @@ return [
     */
 
     'argon' => [
-        'memory' => 65536,
+        'memory'  => 65536,
         'threads' => 1,
-        'time' => 4,
-        'verify' => true,
+        'time'    => 4,
+        'verify'  => true,
     ],
-
 ];
