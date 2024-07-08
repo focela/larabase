@@ -1,0 +1,191 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Basic functional APIs with PHP",
+    "description": "Build basic functional APIs with PHP, without the tears.",
+    "contact": {
+      "name": "Focela Technologies",
+      "email": "opensource@focela.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/license/mit"
+    },
+    "version": "10.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://larabase.dev",
+      "description": "Development environment"
+    }
+  ],
+  "paths": {
+    "/api/private/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Logs user into the system",
+        "operationId": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Credentials"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200"
+          },
+          "201": {
+            "$ref": "#/components/responses/201"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "422": {
+            "$ref": "#/components/responses/422"
+          }
+        }
+      }
+    },
+    "/api/private/user": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Get the authenticated user",
+        "description": "Get the authenticated user",
+        "operationId": "GetUser",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200"
+          },
+          "201": {
+            "$ref": "#/components/responses/201"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          },
+          "422": {
+            "$ref": "#/components/responses/422"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Uuid": {
+        "name": "id",
+        "required": true,
+        "in": "path",
+        "description": "Resource ID",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Search": {
+        "name": "search",
+        "in": "query",
+        "description": "Search...",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "PageLimit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Limits the number of items on a page",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "PageOffset": {
+        "name": "page",
+        "in": "query",
+        "description": "Specifies the page number of the record to be displayed",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "201": {
+        "description": "Created",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "401": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "422": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {}
+        }
+      }
+    },
+    "schemas": {
+      "Credentials": {
+        "type": "object",
+        "required": [
+          "account",
+          "password"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 50
+          }
+        },
+        "example": {
+          "account": "admin@example.com",
+          "password": "vkq3TAP*rtv@enj0zxd"
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Enter token in format (Bearer <token>)",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
