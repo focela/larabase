@@ -1,0 +1,12 @@
+{
+  "alias": "user",
+  "description": "The user module is responsible for managing users and permissions.",
+  "files": [
+    "helpers.php"
+  ],
+  "name": "User",
+  "priority": 6,
+  "providers": [
+    "Modules\\User\\Providers\\UserServiceProvider"
+  ]
+}
