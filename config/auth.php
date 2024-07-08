@@ -41,7 +41,7 @@ return [
 
     'guards' => [
         'web' => [
-            'driver'   => 'sentinel',
+            'driver'   => 'laratrust',
             'provider' => 'users',
         ],
         'api' => [

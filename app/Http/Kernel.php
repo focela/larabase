@@ -8,6 +8,7 @@
 namespace Focela\Http;
 
 use Focela\Http\Middleware\TrimStrings;
+use Focela\Http\Middleware\Authenticate;
 use Focela\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Http\Middleware\HandleCors;
@@ -62,7 +63,7 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
-        'auth'             => Middleware\Authenticate::class,
+        'auth'             => Authenticate::class,
         'auth.basic'       => AuthenticateWithBasicAuth::class,
         'auth.session'     => AuthenticateSession::class,
         'cache.headers'    => SetCacheHeaders::class,
