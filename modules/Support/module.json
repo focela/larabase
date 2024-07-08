@@ -1,0 +1,13 @@
+{
+  "alias": "support",
+  "description": "The support module is responsible for supporting other modules can work well.",
+  "files": [
+    "helpers.php"
+  ],
+  "name": "Support",
+  "priority": 8,
+  "providers": [
+    "Modules\\Support\\Providers\\EloquentMacroServiceProvider",
+    "Modules\\Support\\Providers\\MySQLScoutServiceProvider"
+  ]
+}
