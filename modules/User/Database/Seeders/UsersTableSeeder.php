@@ -29,8 +29,8 @@ class UsersTableSeeder extends Seeder
                 'last_name'  => 'Mr.',
                 'email'      => 'admin@example.com',
                 'username'   => 'admin',
-                'phone'      => '518-528-5410',
-                'password'   => bcrypt('123123'),
+                'phone'      => '(650) 348-9988',
+                'password'   => bcrypt('vkq3TAP*rtv@enj0zxd'),
             ]);
 
             $activation = Activation::create($admin);
