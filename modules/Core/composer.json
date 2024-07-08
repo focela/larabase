@@ -1,0 +1,28 @@
+{
+  "name": "focela/core",
+  "description": "The core module is responsible for managing the core processes of the application.",
+  "authors": [
+    {
+      "name": "Focela Technologies",
+      "email": "opensource@focela.com",
+      "homepage": "https://opensource.focela.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\Core\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "10.0.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev"
+}
