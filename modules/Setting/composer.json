@@ -1,0 +1,28 @@
+{
+  "name": "focela/setting",
+  "description": "The setting module is responsible for handling all site settings.",
+  "authors": [
+    {
+      "name": "Focela Technologies",
+      "email": "opensource@focela.com",
+      "homepage": "https://opensource.focela.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\Setting\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "10.0.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev"
+}

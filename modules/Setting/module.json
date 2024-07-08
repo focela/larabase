@@ -1,0 +1,12 @@
+{
+  "alias": "setting",
+  "description": "The setting module is responsible for handling all site settings.",
+  "files": [
+    "helpers.php"
+  ],
+  "name": "Setting",
+  "priority": 2,
+  "providers": [
+    "Modules\\Setting\\Providers\\EventServiceProvider"
+  ]
+}
