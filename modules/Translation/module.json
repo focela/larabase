@@ -1,0 +1,9 @@
+{
+  "alias": "translation",
+  "description": "The translation module is responsible for providing a convenient way to translation languages.",
+  "name": "Translation",
+  "priority": 1,
+  "providers": [
+    "Modules\\Translation\\Providers\\TranslationServiceProvider"
+  ]
+}
