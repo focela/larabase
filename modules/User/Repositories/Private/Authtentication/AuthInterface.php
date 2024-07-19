@@ -7,6 +7,8 @@
 
 namespace Modules\User\Repositories\Private\Authtentication;
 
+use Illuminate\Http\JsonResponse;
+
 interface AuthInterface
 {
     /**
@@ -16,14 +18,14 @@ interface AuthInterface
      * @param string $password
      * @param bool   $remember
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function login($account, $password, $remember = false);
 
     /**
      * Get the authenticated user.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function user();
 }

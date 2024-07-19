@@ -7,9 +7,11 @@
 
 namespace Modules\User\Http\Controllers\Private;
 
+use Illuminate\Http\JsonResponse;
 use Modules\Core\Http\Controllers\Controller;
 use Modules\User\Http\Requests\Private\LoginRequest;
 use Modules\User\Repositories\Private\Authtentication\AuthInterface;
+use Modules\User\Repositories\Private\Authtentication\AuthRepository;
 
 class AuthController extends Controller
 {
@@ -23,11 +25,11 @@ class AuthController extends Controller
     /**
      * Constructor.
      *
-     * @param AuthInterface $auth
+     * @param AuthRepository $auth
      *
      * @return void
      */
-    public function __construct(AuthInterface $auth)
+    public function __construct(AuthRepository $auth)
     {
         $this->auth = $auth;
     }
@@ -37,7 +39,7 @@ class AuthController extends Controller
      *
      * @param LoginRequest $request
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function postLogin(LoginRequest $request)
     {
@@ -47,7 +49,7 @@ class AuthController extends Controller
     /**
      * Get the authenticated user.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function getUser()
     {
