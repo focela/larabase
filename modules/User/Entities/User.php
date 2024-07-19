@@ -7,16 +7,16 @@
 
 namespace Modules\User\Entities;
 
-use Focela\Laratrust\Activations\EloquentActivation;
-use Focela\Laratrust\Laravel\Facades\Activation;
-use Focela\Laratrust\Users\EloquentUser;
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableInterface;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Auth\Authenticatable;
 use Modules\User\Helpers\Permission;
+use Focela\Laratrust\Users\EloquentUser;
+use Focela\Laratrust\Laravel\Facades\Activation;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Focela\Laratrust\Activations\EloquentActivation;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableInterface;
 
 class User extends EloquentUser implements AuthenticatableInterface
 {

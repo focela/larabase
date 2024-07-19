@@ -51,14 +51,11 @@ class AuthRepository implements AuthInterface
             $authResult = json_decode((string) $response->getBody());
 
             return response()->json([
-                'data' => [
-                    'access_token'  => $authResult->access_token,
-                    'refresh_token' => $authResult->refresh_token,
-                    'expires_in'    => $authResult->expires_in,
-                    'user'          => $this->refactorUserData($loggedIn),
-                ],
-                'message' => __('core::messages.successfully_logged'),
-                'status'  => 200,
+                'access_token'  => $authResult->access_token,
+                'refresh_token' => $authResult->refresh_token,
+                'expires_in'    => $authResult->expires_in,
+                'user'          => $this->refactorUserData($loggedIn),
+                'message'       => __('core::messages.successfully_logged'),
             ], Response::HTTP_OK);
         } catch (NotActivatedException $e) {
             return response()->json([
